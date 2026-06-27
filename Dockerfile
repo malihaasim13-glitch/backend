@@ -50,5 +50,5 @@ ENV PYTHONUNBUFFERED=1
 # Expose the port FastAPI runs on
 EXPOSE 8000
 
-# Run the FastAPI app with uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the FastAPI app with uvicorn using explicit venv path
+CMD ["/app/.venv/bin/python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
