@@ -14,7 +14,7 @@ router = APIRouter(
 )
 
 # MongoDB
-mongo = MongoClient(os.environ.get("MONGO_URI"))
+mongo = MongoClient(os.getenv("MONGO_URI","mongodb+srv://firasmaier_db_user:N1wsklEjkW7e0QbX@cluster0.dmmsmfm.mongodb.net/"))
 
 db = mongo["testdb"]
 
@@ -22,7 +22,7 @@ chat_collection = db["chat_history"]
 
 # Groq
 groq_client = Groq(
-    api_key=os.environ.get("GROQ_API_KEY")
+    api_key=os.getenv("GROQ_API_KEY")
 )
 
 
